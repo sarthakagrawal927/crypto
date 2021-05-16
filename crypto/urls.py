@@ -8,5 +8,4 @@ urlpatterns = [
     path('prices/', views.prices, name='prices'),
 
     path('admin/', admin.site.urls),
-    path('about/', include('about.urls')),
 ]
