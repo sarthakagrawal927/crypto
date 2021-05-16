@@ -2,15 +2,42 @@
 
 {% block content %}
 
-{{ price}}
 
-<div class="conainer">
-    <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Welcome to CryptoNews</h1>
-    <p class="lead">Your source for latest news and blockchain</p>
-  </div>
-</div>
+   <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Welcome to CryptoNetwork</h1>
+            <p class="lead">Your source for latest news and blockchain</p>
+        </div>
+    </div>
+
+
+
+<div class="container">
+    <table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Daily High</th>
+            <th scope="col">Daily High</th>
+            <th scope="col">Market Cap</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for key,value in price.DISPLAY.items %}
+
+        <tr>
+            <th scope="row">{{key}}</th>
+            <td>{{value.RUP.PRICE}}</td>
+            <td>{{value.RUP.HIGHDAY}}</td>
+            <td>{{value.RUP.LOWDAY}}</td>
+            <td>{{value.RUP.MKTCAP}}</td>
+
+        </tr>
+        {% endfor%}
+
+    </tbody>
+</table>
     <div class="row">
         {% for x in api.Data %}
         <div class="col-sm">
